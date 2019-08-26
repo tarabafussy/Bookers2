@@ -1,0 +1,17 @@
+<header>
+	<h1 class="header-title">Bookers</h1>
+	<ul class="header-topic">
+		<li>
+			<a href="user_path">Home</a>
+		</li>
+		<li>
+			<a href="users_path">User</a>
+		</li>
+		<li>
+			<a href="books_path">Book</a>
+		</li>
+		<li>
+			<%= link_to 'logout', destroy_user_session_path, method: :delete %>
+		</li>
+	</ul>
+</header>

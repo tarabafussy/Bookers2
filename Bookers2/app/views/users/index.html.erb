@@ -1,0 +1,17 @@
+<%= render 'users/header' %>
+
+<h1>Users</h1>
+<table class="user-list">
+	<tr>
+		<th class="list-title">Title</th>
+		<th class="list-title">Body</th>
+		<th class="list-title"></th>
+	</tr>
+	<% @users.each do |user| %>
+		<tr>
+			<th class="list-text"><%= user.profile_image %></th>
+			<th class="list-text"><%= user.name %></th>
+			<th class="list-text"><%= link_to "Show", user_path(user) %></th>
+		</tr>
+	<% end %>
+</table>
