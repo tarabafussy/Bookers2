@@ -1,0 +1,9 @@
+<%= render 'users/header' %>
+<h1>User info</h1>
+<%= form_for(@book) do |f| %>
+<%= f.label "Title" %>
+<%= f.text_field :title %>
+<%= f.label "Body" %>
+<%= f.text_area :body %>
+<%= f.submit "Update Book" %>
+<% end %>

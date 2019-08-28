@@ -1,5 +1,5 @@
 <%= render 'users/header' %>
-<%= render 'users/side-bar' %>
+<%= render 'users/side-bar', book: @book %>
 <h1>Users</h1>
 <table class="user-list">
 	<tr>
@@ -9,7 +9,7 @@
 	</tr>
 	<% @users.each do |user| %>
 		<tr>
-			<th class="list-text"><%= attachment_image_tag user, :profile_image, size: "100×100" %></th>
+			<th class="list-text"><%= attachment_image_tag user, :profile_image, :fill, 100, 100 %></th>
 			<th class="list-text"><%= user.name %></th>
 			<th class="list-text"><%= link_to "Show", user_path(user) %></th>
 		</tr>

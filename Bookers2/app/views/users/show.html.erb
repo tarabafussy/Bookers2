@@ -1,2 +1,19 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<%= render 'users/header' %>
+<%= render 'users/side-bar', book: @book %>
+<h1>Books</h1>
+<table class="book-list">
+	<tr>
+		<th class="list-title">Title</th>
+		<th class="list-title">Body</th>
+		<th class="list-title"></th>
+	</tr>
+	<% @books.each do |book| %>
+		<tr>
+			<th class="list-text"><%= attachment_image_tag book.user, :profile_image, :fill, 100, 100 %></th>
+			<th class="list-text"><%= book.title %></th>
+			<th class="list-text"><%= book.body %></th>
+			<th class="list-text"><%= link_to "Show", book_path(book) %></th>
+		</tr>
+	<% end %>
+</table>
+

@@ -2,13 +2,13 @@
 	<h1 class="header-title">Bookers</h1>
 	<ul class="header-topic">
 		<li>
-			<a href="user_path">Home</a>
+			<%= link_to "Home", user_path(current_user) %>
 		</li>
 		<li>
-			<a href="users_path">User</a>
+			<%= link_to "User", users_path %>
 		</li>
 		<li>
-			<a href="books_path">Book</a>
+			<%= link_to "Book", books_path %>
 		</li>
 		<li>
 			<%= link_to 'logout', destroy_user_session_path, method: :delete %>
