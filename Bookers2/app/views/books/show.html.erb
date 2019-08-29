@@ -27,10 +27,14 @@
 					<th class="list-text"><%= @book_detail.body %></th>
 					<% if @book_detail.user == current_user %>
 					<th class="list-edit">
-						<%= link_to "Edit", edit_book_path %>
+						<%= link_to edit_book_path do %>
+						<button type="button" class="btn btn-success">Edit</button>
+						<% end %>
 					</th>
 					<th class="list-destroy">
-						<%= link_to "Destroy", book_path(@book_detail), method: :delete %>
+						<%= link_to book_path(@book_detail), method: :delete, "data-confirm" => "本当に削除しますか？" do %>
+						<button type="button" class="btn btn-danger">Destroy</button>
+						<% end %>
 					</th>
 					<% end %>
 				</tr>
@@ -38,3 +42,4 @@
 		</div>
 	</div>
 </div>
+<%= render 'users/copyright' %>
