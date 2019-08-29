@@ -1,17 +1,50 @@
-<header>
-	<h1 class="header-title">Bookers</h1>
-	<ul class="header-topic">
-		<li>
-			<%= link_to "Home", user_path(current_user) %>
-		</li>
-		<li>
-			<%= link_to "User", users_path %>
-		</li>
-		<li>
-			<%= link_to "Book", books_path %>
-		</li>
-		<li>
-			<%= link_to 'logout', destroy_user_session_path, method: :delete %>
-		</li>
-	</ul>
-</header>
+<nav class="navbar navbar-inverse">
+	<div class="container">
+		<div class="row">
+			<div class="navbar-header">
+				<h3 class="navbar-text">Bookers</h3>
+			</div>
+			<div class="row navbar-right">
+				<div class="collapse navbar-collapse" id="nav-menu">
+					<ul class="nav navbar-nav navbar-right">
+						<% if user_signed_in? %>
+							<li>
+								<%= link_to  user_path(current_user) do %>
+								<i class="glyphicon glyphicon-home" aria-hidden="true"> Home</i>
+								<% end %>
+							</li>
+							<li>
+								<%= link_to  users_path do %>
+								<i class="glyphicon glyphicon-user" aria-hidden="true"> User</i>
+								<% end %>
+							</li>
+							<li>
+								<%= link_to  books_path do %>
+								<i class="glyphicon glyphicon-book" aria-hidden="true"> Book</i>
+								<% end %>
+							</li>
+							<li>
+								<%= link_to  destroy_user_session_path, method: :delete do %>
+								<i class="glyphicon glyphicon-log-out" aria-hidden="true"> logout</i>
+								<% end %>
+							</li>
+						<% else %>
+							<li>
+								<a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a>
+							</li>
+							<li>
+								<a href="/home/about"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> About</a>
+							</li>
+							<li>
+								<a href="/users/sign_up"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> sign up</a>
+							</li>
+							<li>
+								<a href="/users/sign_in"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> login</a>
+							</li>
+						<% end %>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>
